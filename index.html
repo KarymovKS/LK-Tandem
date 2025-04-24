@@ -2,63 +2,62 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ЛК ТАНДЕМ - Логистика Калининград</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ЛК ТАНДЕМ — Премиум Логистика</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body {{
+      background: linear-gradient(to right, #101010, #1a1a1a);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+    }}
+    .text-gold {{ color: #d4af37; }}
+    .bg-gold {{ background-color: #d4af37; }}
+    .bg-gold:hover {{ background-color: #c99d1f; }}
+    .shadow-lg-gold {{ box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5); }}
+  </style>
   <script>
-    function calculatePrice(event) {
-      event.preventDefault();
+    function calculatePrice(e) {{
+      e.preventDefault();
       const weight = parseFloat(document.getElementById('weight').value);
       const volume = parseFloat(document.getElementById('volume').value);
       const price = (weight * 34) + (volume * 29);
-      document.getElementById('result').innerText = `Примерная стоимость доставки: ${price.toFixed(2)} ₽`;
-    }
+      document.getElementById('result').innerText = 'Примерная стоимость: ' + price.toFixed(2) + ' ₽';
+    }}
   </script>
 </head>
-<body class="bg-gray-900 text-white font-sans">
-  <header class="p-6 text-center bg-gray-800">
-    <h1 class="text-3xl md:text-5xl font-bold">ЛК ТАНДЕМ</h1>
-    <p class="text-xl mt-2">Доставка грузов по России и Европе</p>
-    <p class="text-md">Из Калининграда и в Калининград</p>
+<body>
+  <header class="text-center py-6">
+    <img src="logo.png" alt="ЛК ТАНДЕМ" class="w-48 mx-auto mb-4 animate-bounce">
+    <h1 class="text-4xl font-bold text-gold">ЛК ТАНДЕМ</h1>
+    <p class="text-xl text-gray-300 mt-2">Премиум логистика по России и Европе</p>
   </header>
 
-  <section class="max-w-5xl mx-auto p-6">
-    <img src="main-image.png" alt="Логистика по России и Европе" class="rounded shadow-lg mx-auto">
+  <section class="max-w-5xl mx-auto px-4 py-6">
+    <img src="main-image.png" alt="Транспортировка по РФ и ЕС" class="rounded-lg shadow-lg-gold mx-auto w-full">
   </section>
 
-  <section id="calculator" class="px-4 py-8 max-w-xl mx-auto">
-    <h2 class="text-2xl font-semibold mb-4">Калькулятор стоимости</h2>
+  <section class="px-4 py-8 max-w-xl mx-auto text-center">
+    <h2 class="text-2xl font-semibold mb-4 text-gold">Калькулятор стоимости</h2>
     <form onsubmit="calculatePrice(event)" class="space-y-4">
-      <input type="number" id="weight" placeholder="Вес, кг" class="w-full p-3 rounded bg-gray-800 placeholder-gray-400" required>
-      <input type="number" id="volume" placeholder="Объем, м³" class="w-full p-3 rounded bg-gray-800 placeholder-gray-400" required>
-      <button type="submit" class="w-full p-3 bg-orange-600 hover:bg-orange-700 rounded font-semibold">Рассчитать</button>
-      <p id="result" class="text-lg pt-2"></p>
+      <input type="number" id="weight" placeholder="Вес, кг" class="w-full p-3 rounded bg-gray-800" required>
+      <input type="number" id="volume" placeholder="Объем, м³" class="w-full p-3 rounded bg-gray-800" required>
+      <button type="submit" class="w-full p-3 bg-gold text-black font-bold rounded shadow-lg-gold">Рассчитать</button>
+      <p id="result" class="text-lg pt-2 text-white"></p>
     </form>
   </section>
 
-  <section id="contacts" class="px-4 py-8 max-w-xl mx-auto">
-    <h2 class="text-2xl font-semibold mb-4">Контакты</h2>
-    <form action="https://formspree.io/f/myzwyqkn" method="POST" class="space-y-4 mb-4">
-      <label class="block">
-        Ваш email:
-        <input type="email" name="email" class="w-full p-3 mt-1 rounded bg-gray-800 placeholder-gray-400" required>
-      </label>
-      <label class="block">
-        Сообщение:
-        <textarea name="message" class="w-full p-3 mt-1 rounded bg-gray-800 placeholder-gray-400" required></textarea>
-      </label>
-      <button type="submit" class="w-full p-3 bg-orange-600 hover:bg-orange-700 rounded font-semibold">Отправить</button>
+  <section class="px-4 py-8 max-w-xl mx-auto text-center">
+    <h2 class="text-2xl font-semibold mb-4 text-gold">Оставить заявку</h2>
+    <form action="https://formspree.io/f/myzwyqkn" method="POST" class="space-y-4">
+      <input type="email" name="email" placeholder="Ваш email" class="w-full p-3 rounded bg-gray-800" required>
+      <textarea name="message" placeholder="Сообщение" class="w-full p-3 rounded bg-gray-800" required></textarea>
+      <button type="submit" class="w-full p-3 bg-gold text-black font-bold rounded shadow-lg-gold">Отправить</button>
     </form>
-    <div class="text-sm">
-      <p><strong>Телефон:</strong> +7 (4012) 123-45-67</p>
-      <p><strong>Telegram:</strong> @ваш_телеграм</p>
-      <p><strong>WhatsApp:</strong> +7 (4012) 123-45-67</p>
-      <p><strong>Email:</strong> info@example.com</p>
-    </div>
   </section>
 
-  <footer class="text-center py-4 text-gray-400 text-sm bg-gray-900">
+  <footer class="text-center py-4 text-gray-400 text-sm">
     &copy; 2025 ЛК ТАНДЕМ. Все права защищены.
   </footer>
 </body>
